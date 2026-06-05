@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cognitive Bypass Poster</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-green: #00ff66;
+            --accent-orange: #ff5500;
+            --text-muted: #888888;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 严格的竖版海报容器 (比例 9:16) */
+        .poster-container {
+            width: 450px;
+            height: 800px;
+            border: 1px solid #222;
+            background: linear-gradient(180deg, #111 0%, #050505 100%);
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .header {
+            border-bottom: 1px solid #222;
+            padding-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            letter-spacing: 4px;
+            margin: 0;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .header h2 {
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin: 5px 0 0 0;
+        }
+
+        /* 核心逻辑链条区 */
+        .pipeline {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step {
+            position: relative;
+            padding-left: 25px;
+            border-left: 1px dashed #333;
+        }
+
+        .step-num {
+            font-size: 11px;
+            font-weight: bold;
+            color: var(--accent-green);
+            position: absolute;
+            left: -10px;
+            background: #111;
+            padding: 2px 0;
+        }
+
+        .step-title {
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* 核心互动切换区域 */
+        .interactive-zone {
+            background: #151515;
+            border: 1px solid #222;
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-zone:hover {
+            border-color: var(--accent-green);
+        }
+
+        .mode-title {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .view-content {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--accent-green);
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 底部警示与小票页脚 */
+        .footer {
+            margin-top: 20px;
+        }
+
+        .slogan {
+            font-size: 15px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
+        }
+
+        .receipt-footer {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 9px;
+            color: #555;
+            border-top: 1px dashed #333;
+            padding-top: 10px;
+            line-height: 1.4;
+        }
+
+        .btn-toggle {
+            background: none;
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 6px 12px;
+            font-size: 10px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        .btn-toggle.reality {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poster-container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>THE COGNITIVE BYPASS</h1>
+            <h2>从一键免密，到万物皆废</h2>
+        </div>
+
+        <!-- 逻辑链条 -->
+        <div class="pipeline">
+            <div class="step">
+                <span class="step-num">01</span>
+                <div class="step-title">THE CONVERT / 降维转化</div>
+                <div class="step-desc">Frictionless Setting 剥离了网购和退换的一切障碍，将复杂的物质交换简化为无痛的指尖游戏。</div>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <div class="step-title">THE SILENCER / 物理消音</div>
+                <div class="step-desc">Haptic Deprivation（触觉剥夺）让大脑对物品的心理所有权在源头幻灭，商品退化为2D像素。</div>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <div class="step-title">THE CLOAK / 代价致盲</div>
+                <div class="step-desc">柔性供应链黑箱化了所有负外部性（开采污染、跨境碳排）。你以为你买的是衣服，其实那是生态账单。</div>
+            </div>
+        </div>
+
+        <!-- 交互核心区 -->
+        <div class="interactive-zone" id="interactiveZone" onclick="toggleView()">
+            <div class="mode-title" id="modeTitle" style="color: #00ff66;">• DIGITAL FRONT-END (SMOOTH VIEW)</div>
+            <div class="view-content" id="viewContent">
+                [ 📱 2D Image-Commodity ] <br>FaceID Approved. Free Return Active.
+            </div>
+            <button class="btn-toggle" id="toggleBtn">点击切至真实世界</button>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="slogan" id="sloganText">
+                "Your screen is smooth,<br><span style="color: var(--accent-green);">but the Earth is paying for the friction."</span>
+            </div>
+            <div class="receipt-footer">
+                ───────────────────────────────────────────<br>
+                [FEEDBACK]: HAPTIC NOT FOUND  | STATUS: NUMB<br>
+                [ROUTE]: CLICK TO RETURN ──> DESTINED TO BURN<br>
+                ───────────────────────────────────────────
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isSmooth = true;
+        function toggleView() {
+            const modeTitle = document.getElementById('modeTitle');
+            const viewContent = document.getElementById('viewContent');
+            const toggleBtn = document.getElementById('toggleBtn');
+            const sloganText = document.getElementById('sloganText');
+
+            if (isSmooth) {
+                // 切换到现实黑箱
+                modeTitle.innerText = '• PHYSICAL BACK-END (REALITY CHECK)';
+                modeTitle.style.color = '#ff5500';
+                viewContent.innerHTML = '<span style="color: #ff5500;">[ 🌋 REVERSE LOGISTICS CRISIS ]</span><br>服装穿用次数暴跌 36% / 焚烧炉静音燃烧中';
+                toggleBtn.innerText = '返回赛博温室';
+                toggleBtn.className = 'btn-toggle reality';
+                sloganText.innerHTML = '"你的屏幕越光滑，<br><span style="color: var(--accent-orange);">地球承受的摩擦就越沉重。"</span>';
+                isSmooth = false;
+            } else {
+                // 切换回光滑前端
+                modeTitle.innerText = '• DIGITAL FRONT-END (SMOOTH VIEW)';
+                modeTitle.style.color = '#00ff66';
+                viewContent.innerHTML = '[ 📱 2D Image-Commodity ] <br>FaceID Approved. Free Return Active.';
+                toggleBtn.innerText = '点击切至真实世界';
+                toggleBtn.className = 'btn-toggle';
+                sloganText.innerHTML = '"Your screen is smooth,<br><span style="color: var(--accent-green);">but the Earth is paying for the friction."</span>';
+                isSmooth = true;
+            }
+        }
+    </script>
+</body>
+</html>
